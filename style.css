@@ -1,0 +1,21 @@
+* {
+    background-image: url(kepek/hatter.jpg);
+}
+
+#cim {
+    text-align: center;
+    font-style: sans-serif;
+}
+
+#cigidb {
+    width: 200px;
+}
+
+.bevitel {
+    width: 75px;
+}
+
+.szoveg {
+    font-size: medium;
+    font-style: sans-serif;
+}

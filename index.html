@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Cigi Káros</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="cim">A Dohányzás káros rád és a körülötted lévőkre is!</h1>
+    <div class="row">
+        <div class="col-sm-3"><img src="kepek/1.jpg" alt="" width="300px"></div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="szoveg">száma, amit elszívsz egy nap:</span>
+                    <input type="range" id="cigidb" min="0" max="30" value="8" onchange="szamol()">
+                    <span id="darab">8</span>db
+                </div>
+                <div class="col-sm-4">
+                    <span class="szoveg">hány cigi van a dobozban:</span>
+                    <input type="number" id="cigidoboz" min="10" max="30" value="20" class="form-control  bevitel">
+                    <span>Doboz ára:</span>
+                    <input type="number" id="cigiar" min="1300" max="1500" value="1450" class="form-control  bevitel">
+                </div>
+                <div class="col-sm-4">
+                    <span class="szoveg">Dohányzás éves költsége:</span>
+                    <span id="evikoltseg"></span>Ft <br>
+                    <span class="szoveg">Dohányzás havi költsége:</span>
+                    <span id="havikoltseg"></span>Ft <br>
+                    <span class="szoveg">Dohányzás heti költsége:</span>
+                    <span id="hetikoltseg"></span>Ft <br>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"><img src="kepek/2.jpg" alt="" width="400px"></div>
+    </div>
+
+    <script>
+        function szamol() {
+            darab.innerHTML = cigidb.value;
+            evikoltseg.innerHTML = (cigidb.value * 365) / cigidoboz.value * cigiar.value;
+            havikoltseg.innerHTML = (cigidb.value * 30) / cigidoboz.value * cigiar.value;
+            hetikoltseg.innerHTML = (cigidb.value * 7) / cigidoboz.value * cigiar.value;
+        }
+    </script>
+
+</body>
+
+</html>
